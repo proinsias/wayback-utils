@@ -1,2 +1,3 @@
 # wayback-utils
-Utilities for submitting URLs to the Internet Archive's Wayback Machine
+
+Utilities for submitting URLs to the Internet Archive's Wayback Machine.

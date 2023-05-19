@@ -1,0 +1,46 @@
+[tool.poetry]
+# Keep these in sync with CHANGELOG.md and the main __init__.py file.
+name = "wayback-utils"
+version = "0.1.0"
+description = "Utilities for submitting URLs to the Internet Archive's Wayback Machine"
+authors = ["Francis T. O'Donovan <proinsias@users.noreply.github.com>"]
+license = "Unlicense"
+readme = "README.md"
+packages = [{include = "wayback_utils"}]
+repository = "https://github.com/proinsias/wayback-utils"
+# documentation = "{{ repository_provider }}/{{ repository_namespace }}/{{ package_name_py }}/docs"
+classifiers = [
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: The Unlicense (Unlicense)",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  'Programming Language :: Python :: 3.10',
+  'Programming Language :: Python :: 3.11',
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Utilities",
+]
+keywords = ["internet-archive", "wayback-machine", "urls"]
+include = ["AUTHORS", "LICENSE", "README.md", "CHANGELOG.md"]
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://proinsias.github.io/wayback-utils/issues"
+"Homepage" = "https://proinsias.github.io/wayback-utils/"
+
+[tool.poetry.scripts]
+# Note the use of underscores instead of hyphens in the module name!
+wayback-utils = "wayback_utils.main:app"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.30.0"
+duckdb = "^0.8.0"
+
+# FIXME: Add dev dep here.
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+# FIXME: Add more here.
