@@ -1,24 +1,13 @@
-"""Utilities for submitting URLs to the Internet Archive's Wayback Machine."""
+"""Utilities for working with URLs saved to Raindrop.io."""
 
 import typing
 
 import rich.pretty
 import typer
 
-import markdown
-import medium
-import omnifocus
-import pocket
-import raindrop
 import wayback_utils
 
 app = typer.Typer()
-app.add_typer(markdown.app, name="markdown")
-app.add_typer(medium.app, name="medium")
-app.add_typer(omnifocus.app, name="omnifocus")
-app.add_typer(pocket.app, name="pocket")
-app.add_typer(raindrop.app, name="raindrop")
-
 rich.pretty.install()
 
 
@@ -41,7 +30,7 @@ def main(
         is_eager=True,
     ),
 ) -> None:
-    """Utilities to submit URLs to the Internet Archive's Wayback Machine."""
+    """Utilities for working with URLs saved to Raindrop.io."""
     pass
 
 
