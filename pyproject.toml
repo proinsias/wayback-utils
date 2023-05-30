@@ -34,10 +34,15 @@ wayback-utils = "wayback_utils.main:app"
 
 [tool.poetry.dependencies]
 python = "^3.10"
+beautifulsoup4 = "4.12.2"
+duckdb = "^0.8.0"  # FIXME: Don't need!!! Jsut query database.
 requests = "^2.30.0"
-duckdb = "^0.8.0"
+tqdm = "^4.65.0"
+types-requests = "^2.31.0.1"
 
 # FIXME: Add dev dep here.
+typer = "^0.9.0"
+rich = "^13.3.5"
 
 [build-system]
 requires = ["poetry-core"]

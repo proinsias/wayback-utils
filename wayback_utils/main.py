@@ -1,15 +1,11 @@
 """Utilities for submitting URLs to the Internet Archive's Wayback Machine."""
 
-import datetime as dt
-import os
-import tempfile
 import typing
 
 import rich.pretty
 import typer
 
 import wayback_utils
-
 
 app = typer.Typer()
 rich.pretty.install()
@@ -34,20 +30,8 @@ def main(
         callback=version_callback,
         is_eager=True,
     ),
-    field: typing.Optional[str] = typer.Option(
-        'last_modified_at',
-        "--field",
-        "-f",
-        help="the YAML field name for the date the file was last modified",
-    ),
-    datetime_format: typing.Optional[str] = typer.Option(
-        '%Y-%m-%d %H:%M:%S',
-        "--datetime-format",
-        "-d",
-        help="the format for the last modified date field",
-    ),
 ) -> None:
-    """Utilities for submitting URLs to the Internet Archive's Wayback Machine."""
+    """Utilities to submit URLs to the Internet Archive's Wayback Machine."""
 
 
 if __name__ == "__main__":
