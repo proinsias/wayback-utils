@@ -7,7 +7,7 @@ import typer
 
 import wayback_utils
 
-app = typer.Typer()
+app = typer.Typer(context_settings={"help_option_names": ["-h", "--help"]})
 rich.pretty.install()
 
 

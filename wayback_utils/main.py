@@ -12,7 +12,7 @@ import pocket
 import raindrop
 import wayback_utils
 
-app = typer.Typer()
+app = typer.Typer(context_settings={"help_option_names": ["-h", "--help"]})
 app.add_typer(markdown.app, name="markdown")
 app.add_typer(medium.app, name="medium")
 app.add_typer(omnifocus.app, name="omnifocus")
