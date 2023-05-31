@@ -11,13 +11,6 @@ app = typer.Typer(context_settings={"help_option_names": ["-h", "--help"]})
 rich.pretty.install()
 
 
-def version_callback(value: bool, ) -> None:
-    if value:
-        typer.echo(
-            f"{wayback_utils.__name__} version: {wayback_utils.__version__}")
-        raise typer.Exit()
-
-
 @app.callback()
 def main(
     *,
@@ -26,7 +19,7 @@ def main(
         "--version",
         "-v",
         help=f"print the version of {wayback_utils.__name__}",
-        callback=version_callback,
+        callback=wayback_utils.version_callback,
         is_eager=True,
     ),
 ) -> None:

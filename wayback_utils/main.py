@@ -6,26 +6,27 @@ import rich.pretty
 import typer
 
 import markdown
-import medium
+import medium_utils
 import omnifocus
-import pocket
+import pocket_utils
 import raindrop
 import wayback_utils
 
 app = typer.Typer(context_settings={"help_option_names": ["-h", "--help"]})
 app.add_typer(markdown.app, name="markdown")
-app.add_typer(medium.app, name="medium")
+app.add_typer(medium_utils.app, name="medium")
 app.add_typer(omnifocus.app, name="omnifocus")
-app.add_typer(pocket.app, name="pocket")
+app.add_typer(pocket_utils.app, name="pocket")
 app.add_typer(raindrop.app, name="raindrop")
 
 rich.pretty.install()
 
 
-def version_callback(value: bool, ) -> None:
+def version_callback(value: bool) -> None:
     if value:
         typer.echo(
-            f"{wayback_utils.__name__} version: {wayback_utils.__version__}")
+            f"{wayback_utils.__name__} version: {wayback_utils.__version__}",
+        )
         raise typer.Exit()
 
 
