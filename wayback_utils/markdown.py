@@ -2,13 +2,12 @@
 
 import typing
 
-import rich.pretty
 import typer
+from rich import print
 
 import wayback_utils
 
 app = typer.Typer(context_settings={"help_option_names": ["-h", "--help"]})
-rich.pretty.install()
 
 
 @app.callback()
